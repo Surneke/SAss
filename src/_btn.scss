@@ -1,0 +1,66 @@
+$primary-color: #0084f8;
+$secondary-color: #fff;
+$delete-color : #ff7870;
+$danger-color: black;
+$cute-color: pink;
+$disabled: #d6d1da;
+$success: #00daa8;
+$radius-button: 5px;
+$font-stack: Helvetica, sans-serif;
+$colors:(
+        B200:#0084f8,
+        D400:#001b36,
+        White:#ffffff,
+        B100:#58c2f1,
+        R100:#ff8576,
+        G100:#47c2b1,
+        D100:#f0f5f9,
+        D200:#c9d6df,                                                                                                                                                                                                                                        
+        D300:#52616b,
+);
+@mixin button {
+    border-radius: $radius-button;
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    color: $secondary-color;
+    &:hover{
+        opacity: 0.2;
+    }
+}
+@each $key, $color in $colors {
+    .box-#{$key} {
+        display: inline-block;
+        font-family: "Icon Font";
+        content: $color;
+    }
+}
+.btn-primary {
+    @include button();
+    background-color: $primary-color;
+    border: $secondary-color;
+}
+.btn-default {
+    @include button();
+    border-bottom: 1px solid $primary-color;
+    color: $danger-color;
+    background-color: $secondary-color;
+}
+.btn-secondary {
+    @include button();
+    border: 1px solid $primary-color;
+    background-color: $secondary-color;
+    color: $primary-color
+}
+.btn-disabled {
+    @include button();
+    background-color:$disabled;
+}
+.btn-success {
+    @include button();
+    background-color:$success ;
+}
+.btn-delete {
+    @include button();
+    background-color: $delete-color;
+}

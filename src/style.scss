@@ -1,0 +1,23 @@
+@import './_btn';
+
+body {
+    font: 100% $font-stack;
+}
+.App { 
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    nav{
+        height: 100px;
+        display: flex;
+        border: 1px solid $secondary-color;
+        justify-content: center;
+    }
+    ul {
+        display: flex;
+        gap: 30px;
+    }
+    li {
+        font-size: large;
+    }
+}
